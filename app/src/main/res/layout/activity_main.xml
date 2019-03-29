@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="8dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/score_text"
+            android:textSize="40sp"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:text="@string/zero"
+            android:layout_alignParentRight="true"
+            android:id="@+id/score"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textSize="30sp"
+        android:text="@string/question_one_placeholder"
+        android:textAlignment="center"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/question"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="8dp"
+        android:textSize="30sp"
+        android:text="@string/choice_one_placeholder"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/choice_one"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="8dp"
+        android:textSize="30sp"
+        android:text="@string/choice_two_placeholder"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/choice_two"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="8dp"
+        android:textSize="30sp"
+        android:text="@string/choice_three_placeholder"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/choice_three"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="8dp"
+        android:textSize="30sp"
+        android:text="@string/choice_four_placeholder"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/choice_four"
+        />
+
+
+</LinearLayout>

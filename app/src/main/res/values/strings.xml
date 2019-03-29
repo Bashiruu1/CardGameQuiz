@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Card Game Quiz</string>
+    <string name="score_text">Score</string>
+    <string name="zero">0</string>
+    <string name="question_one_placeholder">What color is the average person eyes?"</string>
+    <string name="choice_one_placeholder">Yellow</string>
+    <string name="choice_two_placeholder">Brown</string>
+    <string name="choice_three_placeholder">Blue</string>
+    <string name="choice_four_placeholder">Red</string>
+    <string name="correct">correct</string>
+    <string name="incorrect">incorrect</string>
+</resources>
