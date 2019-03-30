@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
     private int currentQuestion = 0;
     private int score = 0;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,15 +29,61 @@ public class MainActivity extends AppCompatActivity {
         choiceThree = findViewById(R.id.choice_three);
         choiceFour = findViewById(R.id.choice_four);
 
+        correctAnswer = quizLibrary.getCorrectAnswer(currentQuestion);
 
         choiceOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (choiceOne.getText() == correctAnswer) {
+                if (choiceOne.getText().equals(correctAnswer)) {
+                    Toast.makeText(MainActivity.this, R.string.correct, Toast.LENGTH_LONG).show();
                     score++;
                     updateScore(score);
                     updateQuestion();
+                } else {
+                    Toast.makeText(MainActivity.this, R.string.incorrect, Toast.LENGTH_LONG).show();
+                    updateQuestion();
+                }
+            }
+        });
+
+        choiceTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (choiceTwo.getText().equals(correctAnswer)) {
                     Toast.makeText(MainActivity.this, R.string.correct, Toast.LENGTH_LONG).show();
+                    score++;
+                    updateScore(score);
+                    updateQuestion();
+                } else {
+                    Toast.makeText(MainActivity.this, R.string.incorrect, Toast.LENGTH_LONG).show();
+                    updateQuestion();
+                }
+            }
+        });
+
+        choiceThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (choiceThree.getText().equals(correctAnswer)) {
+                    Toast.makeText(MainActivity.this, R.string.correct, Toast.LENGTH_LONG).show();
+                    score++;
+                    updateScore(score);
+                    updateQuestion();
+                } else {
+                    Toast.makeText(MainActivity.this, R.string.incorrect, Toast.LENGTH_LONG).show();
+                    updateQuestion();
+                }
+            }
+        });
+
+        choiceFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (choiceFour.getText().equals(correctAnswer)) {
+                    Toast.makeText(MainActivity.this, R.string.correct, Toast.LENGTH_LONG).show();
+                    score++;
+                    updateScore(score);
+                    updateQuestion();
                 } else {
                     Toast.makeText(MainActivity.this, R.string.incorrect, Toast.LENGTH_LONG).show();
                     updateQuestion();
@@ -49,15 +93,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateQuestion() {
-
-        questionView.setText(currentQuestion);
-        choiceOne.setText(quizLibrary.getChoice1(currentQuestion));
-        choiceTwo.setText(quizLibrary.getChoice2(currentQuestion));
-        choiceThree.setText(quizLibrary.getChoice3(currentQuestion));
-        choiceFour.setText(quizLibrary.getChoice4(currentQuestion));
-        correctAnswer = quizLibrary.getCorrectAnswer(currentQuestion);
         currentQuestion++;
-        System.out.println("Working");
+        try {
+            questionView.setText(quizLibrary.getQuestion(currentQuestion));
+            choiceOne.setText(quizLibrary.getChoice1(currentQuestion));
+            choiceTwo.setText(quizLibrary.getChoice2(currentQuestion));
+            choiceThree.setText(quizLibrary.getChoice3(currentQuestion));
+            choiceFour.setText(quizLibrary.getChoice4(currentQuestion));
+            correctAnswer = quizLibrary.getCorrectAnswer(currentQuestion);
+        } catch (ArrayIndexOutOfBoundsException e) {
+
+        }
     }
 
     private void updateScore(int score) {
